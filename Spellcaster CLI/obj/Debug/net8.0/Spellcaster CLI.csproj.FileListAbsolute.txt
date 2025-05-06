@@ -1,0 +1,18 @@
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0\Spellcaster CLI.exe
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0\Spellcaster CLI.deps.json
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0\Spellcaster CLI.runtimeconfig.json
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0\Spellcaster CLI.dll
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0\Spellcaster CLI.pdb
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0\dotenv.net.dll
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\Spellcaster CLI.csproj.AssemblyReference.cache
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\Spellcaster CLI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\Spellcaster CLI.AssemblyInfoInputs.cache
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\Spellcaster CLI.AssemblyInfo.cs
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\Spellcaster CLI.csproj.CoreCompileInputs.cache
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\Spellcaster CLI.sourcelink.json
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\Spellcas.31584990.Up2Date
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\Spellcaster CLI.dll
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\refint\Spellcaster CLI.dll
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\Spellcaster CLI.pdb
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\Spellcaster CLI.genruntimeconfig.cache
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\ref\Spellcaster CLI.dll

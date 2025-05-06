@@ -1,3 +1,6 @@
 .vs/
 *.user
 *.suo
+/Spellcaster CLI/.env
+.env
+
