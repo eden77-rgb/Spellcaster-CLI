@@ -6,12 +6,12 @@ public class OpenAIService
 
     public OpenAIService(string apiKey)
     {
-        this.apiKey = apiKey;   
+        this.apiKey = apiKey;  
     }
 
-    public string getPrompt(string texte)
+    public string getPrompt(string prompt, string texte)
     {
-        return $"Corrige uniquement le texte suivant sans commentaire : {texte}";
+        return $"{prompt} : {texte}";
     }
 
     public string getData(string prompt)

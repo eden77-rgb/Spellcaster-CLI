@@ -14,7 +14,25 @@ public class UserInterfaces
     public void Correction()
     {
         Console.Clear();
+        Console.WriteLine("Vous avez choisi : Correction d'un texte");
         Console.WriteLine("Entrez le texte à corriger :");
+        Console.Write("> ");
+    }
+
+    public void Traduction(string nb)
+    {
+        Console.Clear();
+        Console.WriteLine($"Vous avez choisi : Traduction {(nb == "1" ? "US" : "UK")}");
+        Console.WriteLine("Entrez le texte à traduire :");
+        Console.Write("> ");
+    }
+
+    public void US_UK()
+    {
+        Console.Clear();
+        Console.WriteLine("Entrez la langue de traduction :");
+        Console.WriteLine("1. Traduction en US");
+        Console.WriteLine("2. Traduction en UK");
         Console.Write("> ");
     }
 }

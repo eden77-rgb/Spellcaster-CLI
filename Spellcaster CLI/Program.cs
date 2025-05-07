@@ -8,16 +8,35 @@ class Program
     {
         DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] { PATH_ENV }));
         string apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
-        
+
         UserInterfaces affichage = new UserInterfaces();
+        OpenAIService service = new OpenAIService(apiKey);
+        PromptType prompt = new PromptType();
+
+        var Correction = prompt.Prompt()[PromptType.Type.Correction];
+        var TraductionUS = prompt.Prompt()[PromptType.Type.TraductionUS];
+        var TraductionUK = prompt.Prompt()[PromptType.Type.TraductionUK];
 
         affichage.Menu();
         string choix = Console.ReadLine();
 
-        affichage.Correction();
-        var texte = Console.ReadLine();
+        if (choix == "1")
+        {
+            affichage.Correction();
+            string texte = Console.ReadLine();
 
-        OpenAIService service = new OpenAIService(apiKey);
-        Console.WriteLine($"[ASSISTANT]: {service.getData(service.getPrompt(texte))}");
+            Console.WriteLine($"[ASSISTANT]: {service.getData(service.getPrompt(Correction, texte))}");
+        }
+
+        else if (choix == "2")
+        {
+            affichage.US_UK();
+            string choixUsUk = Console.ReadLine();
+
+            affichage.Traduction(choixUsUk);
+            string texte = Console.ReadLine();
+
+            Console.WriteLine($"[ASSISTANT]: {service.getData(service.getPrompt((choixUsUk == "1" ? TraductionUS : TraductionUK), texte))}");
+        }
     }
 }
