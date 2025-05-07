@@ -11,7 +11,7 @@ public class OpenAIService
 
     public string getPrompt(string texte)
     {
-        return $"Corrige les fautes d'orthographe et de grammaire du texte suivant : {texte}";
+        return $"Corrige uniquement le texte suivant sans commentaire : {texte}";
     }
 
     public string getData(string prompt)

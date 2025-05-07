@@ -8,10 +8,15 @@ class Program
     {
         DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] { PATH_ENV }));
         string apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
-
-        Console.Write("Entrez le texte à corriger : \n> ");
-        string texte = Console.ReadLine();
         
+        UserInterfaces affichage = new UserInterfaces();
+
+        affichage.Menu();
+        string choix = Console.ReadLine();
+
+        affichage.Correction();
+        var texte = Console.ReadLine();
+
         OpenAIService service = new OpenAIService(apiKey);
         Console.WriteLine($"[ASSISTANT]: {service.getData(service.getPrompt(texte))}");
     }
