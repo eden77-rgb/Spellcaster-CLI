@@ -1,5 +1,4 @@
 ﻿using dotenv.net;
-using OpenAI.Chat;
 
 class Program 
 {
