@@ -16,3 +16,6 @@ C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\refi
 C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\Spellcaster CLI.pdb
 C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\Spellcaster CLI.genruntimeconfig.cache
 C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0\ref\Spellcaster CLI.dll
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0\OpenAI.dll
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0\System.ClientModel.dll
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0\System.Memory.Data.dll
