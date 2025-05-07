@@ -37,6 +37,6 @@ class Program
             string texte = Console.ReadLine();
 
             Console.WriteLine($"[ASSISTANT]: {service.getData(service.getPrompt((choixUsUk == "1" ? TraductionUS : TraductionUK), texte))}");
-        }
+        } 
     }
 }
