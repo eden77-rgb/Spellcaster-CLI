@@ -35,4 +35,16 @@ public class UserInterfaces
         Console.WriteLine("2. Traduction en UK");
         Console.Write("> ");
     }
+
+    public void HTML()
+    {
+        Console.Clear();
+        Console.WriteLine("Entrez le thème :");
+        Console.WriteLine("1. Santé");
+        Console.WriteLine("2. Informatique");
+        Console.WriteLine("3. Economie");
+        Console.WriteLine("4. Environnement");
+        Console.WriteLine("5. Culture");
+        Console.Write("> ");
+    }
 }
