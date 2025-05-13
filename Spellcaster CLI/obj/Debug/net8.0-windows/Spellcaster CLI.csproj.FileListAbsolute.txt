@@ -1,0 +1,21 @@
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0-windows\Spellcaster CLI.exe
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0-windows\Spellcaster CLI.deps.json
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0-windows\Spellcaster CLI.runtimeconfig.json
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0-windows\Spellcaster CLI.dll
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0-windows\Spellcaster CLI.pdb
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0-windows\dotenv.net.dll
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0-windows\OpenAI.dll
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0-windows\System.ClientModel.dll
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0-windows\Spellcaster CLI.csproj.AssemblyReference.cache
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0-windows\Spellcaster CLI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0-windows\Spellcaster CLI.AssemblyInfoInputs.cache
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0-windows\Spellcaster CLI.AssemblyInfo.cs
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0-windows\Spellcaster CLI.csproj.CoreCompileInputs.cache
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0-windows\Spellcaster CLI.sourcelink.json
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0-windows\Spellcas.31584990.Up2Date
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0-windows\Spellcaster CLI.dll
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0-windows\refint\Spellcaster CLI.dll
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0-windows\Spellcaster CLI.pdb
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0-windows\Spellcaster CLI.genruntimeconfig.cache
+C:\Users\edenv\source\repos\SpellcasterCLI\Spellcaster CLI\obj\Debug\net8.0-windows\ref\Spellcaster CLI.dll

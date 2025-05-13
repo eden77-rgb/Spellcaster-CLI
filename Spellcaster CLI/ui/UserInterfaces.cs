@@ -68,4 +68,10 @@ public class UserInterfaces
         Console.WriteLine("Merci de l'utilisation");
         Console.WriteLine("Le système s'arrête");
     }
+
+    public void Lancer()
+    {
+        Console.WriteLine("\nSouhaitez vous lancer le fichier créer ? (O/N)");
+        Console.Write("> ");
+    }
 }

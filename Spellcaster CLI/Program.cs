@@ -73,6 +73,14 @@ class Program
                 affichage.Creation(theme[choixTheme]);
                 await html.Generate(theme[choixTheme], newsAPI, erreur);
 
+                affichage.Lancer();
+                string choixLancer = Console.ReadLine().Trim();
+
+                if (choixLancer == "O")
+                {
+                    html.Run(theme[choixTheme]);   
+                }
+
                 affichage.Suite();
             }
 

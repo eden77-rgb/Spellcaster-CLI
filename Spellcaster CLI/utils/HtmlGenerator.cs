@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 class HtmlGenerator
 {
@@ -46,6 +47,21 @@ class HtmlGenerator
             File.WriteAllText($"output/{fileName}.html", html);
             Console.WriteLine("Fichier créer avec succès");
         }
-        
+    }
+
+    public void Run(string fileName)
+    {
+        string projectRoot = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\"));
+        string fullPath = Path.Combine(projectRoot, "output", $"{fileName}.html");
+
+        if (File.Exists(fullPath))
+        {
+            Process.Start(new ProcessStartInfo(fullPath) { UseShellExecute = true });
+        }
+
+        else
+        {
+            Console.WriteLine($"[ERREUR] Le fichier {fullPath} est introuvable.");
+        }
     }
 }
