@@ -14,6 +14,7 @@ class Program
         OpenAIService openAI = new OpenAIService(openAIApiKey);
         PromptType prompt = new PromptType();
         NewsAPIService newsAPI = new NewsAPIService(newsAPIApiKey);
+        HtmlGenerator html = new HtmlGenerator();
 
         var Correction = prompt.Prompt()[PromptType.Type.Correction];
         var TraductionUS = prompt.Prompt()[PromptType.Type.TraductionUS];
@@ -45,6 +46,10 @@ class Program
         {
             Console.WriteLine($"Titre : {newsAPI.getTitre("technology", 0)}");
             Console.WriteLine($"Description : {newsAPI.getDescription("technology", 0)}");
+            Console.WriteLine($"Image : {newsAPI.getImage("technology", 0)}");
+            Console.WriteLine($"Url : {newsAPI.getUrl("technology", 0)}");
+
+            html.Generate("technology", newsAPI);
         }
     }
 }

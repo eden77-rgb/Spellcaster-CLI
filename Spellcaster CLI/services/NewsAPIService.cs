@@ -12,7 +12,7 @@ public class NewsAPIService
 
     public async Task<string> getData(string categorie)
     {
-        string URL = $"https://newsapi.org/v2/top-headlines?country=us&apiKey={this.apiKey}&category={categorie}&pageSize=5";
+        string URL = $"https://newsapi.org/v2/top-headlines?country=us&apiKey={this.apiKey}&category={categorie}&pageSize=6";
         string data = "";
 
         var reponse = await client.GetAsync(URL);
@@ -48,5 +48,15 @@ public class NewsAPIService
     public string getDescription(string categorie, int id)
     {
         return getJson(categorie).RootElement.GetProperty("articles")[id].GetProperty("content").GetString();
+    }
+
+    public string getImage(string categorie, int id)
+    {
+        return getJson(categorie).RootElement.GetProperty("articles")[id].GetProperty("urlToImage").GetString();
+    }
+
+    public string getUrl(string categorie, int id)
+    {
+        return getJson(categorie).RootElement.GetProperty("articles")[id].GetProperty("url").GetString();
     }
 }
