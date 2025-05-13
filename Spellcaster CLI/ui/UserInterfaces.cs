@@ -55,4 +55,16 @@ public class UserInterfaces
         Console.Clear();
         Console.WriteLine($"Création de {fileName}.html dans le dossier output/");
     }
+
+    public void Suite()
+    {
+        Console.WriteLine("\nAppuie sur une touche pour revenir au menu...");
+        Console.ReadKey();
+    }
+
+    public void Fin()
+    {
+        Console.WriteLine("Merci de l'utilisation");
+        Console.WriteLine("Le système s'arrête");
+    }
 }

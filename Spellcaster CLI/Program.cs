@@ -31,35 +31,50 @@ class Program
         var TraductionUS = prompt.Prompt()[PromptType.Type.TraductionUS];
         var TraductionUK = prompt.Prompt()[PromptType.Type.TraductionUK];
 
-        affichage.Menu();
-        string choix = Console.ReadLine();
-
-        if (choix == "1")
+        bool running = true;
+        while (running)
         {
-            affichage.Correction();
-            string texte = Console.ReadLine();
+            affichage.Menu();
+            string choix = Console.ReadLine();
 
-            Console.WriteLine($"[ASSISTANT]: {openAI.getData(openAI.getPrompt(Correction, texte))}");
-        }
+            if (choix == "1")
+            {
+                affichage.Correction();
+                string texte = Console.ReadLine();
 
-        else if (choix == "2")
-        {
-            affichage.US_UK();
-            string choixUsUk = Console.ReadLine();
+                Console.WriteLine($"[ASSISTANT]: {openAI.getData(openAI.getPrompt(Correction, texte))}");
+                affichage.Suite();
+            }
 
-            affichage.Traduction(choixUsUk);
-            string texte = Console.ReadLine();
+            else if (choix == "2")
+            {
+                affichage.US_UK();
+                string choixUsUk = Console.ReadLine();
 
-            Console.WriteLine($"[ASSISTANT]: {openAI.getData(openAI.getPrompt((choixUsUk == "1" ? TraductionUS : TraductionUK), texte))}");
-        }
+                affichage.Traduction(choixUsUk);
+                string texte = Console.ReadLine();
 
-        else if (choix == "3")
-        {
-            affichage.HTML();
-            string choixTheme = Console.ReadLine();
+                Console.WriteLine($"[ASSISTANT]: {openAI.getData(openAI.getPrompt((choixUsUk == "1" ? TraductionUS : TraductionUK), texte))}");
+                affichage.Suite();
+            }
 
-            affichage.Creation(theme[choixTheme]);
-            await html.Generate(theme[choixTheme], newsAPI);
+            else if (choix == "3")
+            {
+                affichage.HTML();
+                string choixTheme = Console.ReadLine();
+
+                affichage.Creation(theme[choixTheme]);
+                await html.Generate(theme[choixTheme], newsAPI);
+                Console.WriteLine("Fichier créer avec succès");
+
+                affichage.Suite();
+            }
+
+            else if (choix == "0")
+            {
+                affichage.Fin();
+                running = false;
+            }
         }
     }
 }
