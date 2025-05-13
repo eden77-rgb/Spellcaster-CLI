@@ -47,7 +47,6 @@ public class UserInterfaces
         Console.WriteLine("5. Sciences");
         Console.WriteLine("6. Sport");
         Console.WriteLine("7. Technologie");
-        Console.Write("> ");
     }
 
     public void Creation(string fileName)

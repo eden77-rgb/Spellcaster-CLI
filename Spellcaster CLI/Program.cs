@@ -68,13 +68,13 @@ class Program
             else if (choix == "3")
             {
                 affichage.HTML();
-                string choixTheme = Console.ReadLine();
+                string choixTheme = erreur.ChoixDictionaire(theme);
 
                 affichage.Creation(theme[choixTheme]);
                 await html.Generate(theme[choixTheme], newsAPI, erreur);
 
                 affichage.Lancer();
-                string choixLancer = Console.ReadLine().Trim();
+                string choixLancer = Console.ReadLine();
 
                 if (choixLancer == "O")
                 {

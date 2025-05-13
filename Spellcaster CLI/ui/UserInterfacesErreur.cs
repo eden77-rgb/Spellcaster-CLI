@@ -90,4 +90,22 @@ class UserInterfacesErreur
 
         return true;
     }
+
+    public string ChoixDictionaire(Dictionary<string, string> themes)
+    {
+        string choix;
+        do
+        {
+            Console.Write("> ");
+            choix = Console.ReadLine().Trim();
+
+            if (!themes.ContainsKey(choix))
+            {
+                ErreurChoix();
+            }
+
+        } while (!themes.ContainsKey(choix));
+
+        return choix;
+    }
 }
