@@ -10,11 +10,17 @@ public class NewsAPIService
         this.apiKey = apiKey;
     }
 
+    static NewsAPIService()
+    {
+        client.DefaultRequestHeaders.Add("User-Agent", "CSharpApp");
+    }
+
     public async Task<string> getData(string categorie)
     {
-        string URL = $"https://newsapi.org/v2/top-headlines?country=us&apiKey={this.apiKey}&category={categorie}&pageSize=6";
+        string URL = $"https://newsapi.org/v2/top-headlines?country=us&apiKey={this.apiKey}&category={categorie}&pageSize=10";
         string data = "";
 
+        Console.WriteLine($"[DEBUG] URL = {URL}");
         var reponse = await client.GetAsync(URL);
 
         if (reponse.IsSuccessStatusCode)
@@ -22,12 +28,17 @@ public class NewsAPIService
             data = await reponse.Content.ReadAsStringAsync();
         }
 
+        else
+        {
+            Console.WriteLine($"[ERREUR] Code HTTP : {(int)reponse.StatusCode} - {reponse.ReasonPhrase}");
+        }
+
         return data;
     }
 
-    public JsonDocument getJson(string categorie)
+    public async Task<JsonDocument> getJson(string categorie)
     {
-        string json = getData(categorie).GetAwaiter().GetResult();
+        string json = await getData(categorie);
 
         if (string.IsNullOrWhiteSpace(json))
         {
@@ -40,23 +51,23 @@ public class NewsAPIService
         return document;
     }
 
-    public string getTitre(string categorie, int id)
+    public async Task<string> getTitre(string categorie, int id)
     {
-        return getJson(categorie).RootElement.GetProperty("articles")[id].GetProperty("title").GetString();
+        return (await getJson(categorie)).RootElement.GetProperty("articles")[id].GetProperty("title").GetString();
     }
 
-    public string getDescription(string categorie, int id)
+    public async Task<string> getDescription(string categorie, int id)
     {
-        return getJson(categorie).RootElement.GetProperty("articles")[id].GetProperty("content").GetString();
+        return (await getJson(categorie)).RootElement.GetProperty("articles")[id].GetProperty("content").GetString();
     }
 
-    public string getImage(string categorie, int id)
+    public async Task<string> getImage(string categorie, int id)
     {
-        return getJson(categorie).RootElement.GetProperty("articles")[id].GetProperty("urlToImage").GetString();
+        return (await getJson(categorie)).RootElement.GetProperty("articles")[id].GetProperty("urlToImage").GetString();
     }
 
-    public string getUrl(string categorie, int id)
+    public async Task<string> getUrl(string categorie, int id)
     {
-        return getJson(categorie).RootElement.GetProperty("articles")[id].GetProperty("url").GetString();
+        return (await getJson(categorie)).RootElement.GetProperty("articles")[id].GetProperty("url").GetString();
     }
 }

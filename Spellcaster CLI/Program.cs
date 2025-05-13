@@ -1,10 +1,11 @@
-﻿using dotenv.net;
+﻿using System.Threading.Tasks;
+using dotenv.net;
 
 class Program 
 {
     private const string PATH_ENV = ".env";
 
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] { PATH_ENV }));
         string openAIApiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
@@ -44,12 +45,10 @@ class Program
 
         else if (choix == "3")
         {
-            Console.WriteLine($"Titre : {newsAPI.getTitre("technology", 0)}");
-            Console.WriteLine($"Description : {newsAPI.getDescription("technology", 0)}");
-            Console.WriteLine($"Image : {newsAPI.getImage("technology", 0)}");
-            Console.WriteLine($"Url : {newsAPI.getUrl("technology", 0)}");
+            affichage.HTML();
+            string choixTheme = Console.ReadLine();
 
-            html.Generate("technology", newsAPI);
+            await html.Generate("business", newsAPI);
         }
     }
 }
