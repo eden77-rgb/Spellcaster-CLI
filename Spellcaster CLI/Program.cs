@@ -4,6 +4,16 @@ using dotenv.net;
 class Program 
 {
     private const string PATH_ENV = ".env";
+    private static Dictionary<string, string> theme = new Dictionary<string, string>
+    {
+        { "1", "business" },
+        { "2", "entertainment" },
+        { "3", "general" },
+        { "4", "health" },
+        { "5", "science" },
+        { "6", "sports" },
+        { "7", "technology" },
+    };
 
     public static async Task Main(string[] args)
     {
@@ -48,7 +58,8 @@ class Program
             affichage.HTML();
             string choixTheme = Console.ReadLine();
 
-            await html.Generate("business", newsAPI);
+            affichage.Creation(theme[choixTheme]);
+            await html.Generate(theme[choixTheme], newsAPI);
         }
     }
 }

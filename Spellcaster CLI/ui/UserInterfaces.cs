@@ -40,11 +40,19 @@ public class UserInterfaces
     {
         Console.Clear();
         Console.WriteLine("Entrez le thème :");
-        Console.WriteLine("1. Santé");
-        Console.WriteLine("2. Informatique");
-        Console.WriteLine("3. Economie");
-        Console.WriteLine("4. Environnement");
-        Console.WriteLine("5. Culture");
+        Console.WriteLine("1. Economie");
+        Console.WriteLine("2. Divertissement");
+        Console.WriteLine("3. Général");
+        Console.WriteLine("4. Santé");
+        Console.WriteLine("5. Sciences");
+        Console.WriteLine("6. Sport");
+        Console.WriteLine("7. Technologie");
         Console.Write("> ");
+    }
+
+    public void Creation(string fileName)
+    {
+        Console.Clear();
+        Console.WriteLine($"Création de {fileName}.html dans le dossier output/");
     }
 }

@@ -20,7 +20,6 @@ public class NewsAPIService
         string URL = $"https://newsapi.org/v2/top-headlines?country=us&apiKey={this.apiKey}&category={categorie}&pageSize=10";
         string data = "";
 
-        Console.WriteLine($"[DEBUG] URL = {URL}");
         var reponse = await client.GetAsync(URL);
 
         if (reponse.IsSuccessStatusCode)
