@@ -29,7 +29,7 @@ public class NewsAPIService
 
         else
         {
-            Console.WriteLine($"[ERREUR] Code HTTP : {(int)reponse.StatusCode} - {reponse.ReasonPhrase}");
+            Console.WriteLine($"[ERREUR]: Code HTTP : {(int)reponse.StatusCode} - {reponse.ReasonPhrase}");
         }
 
         return data;

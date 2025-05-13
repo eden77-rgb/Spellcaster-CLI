@@ -64,6 +64,7 @@ public class UserInterfaces
 
     public void Fin()
     {
+        Console.Clear();
         Console.WriteLine("Merci de l'utilisation");
         Console.WriteLine("Le système s'arrête");
     }

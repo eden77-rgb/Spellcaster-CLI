@@ -17,15 +17,22 @@ class Program
 
     public static async Task Main(string[] args)
     {
+        UserInterfaces affichage = new UserInterfaces();
+        UserInterfacesErreur erreur = new UserInterfacesErreur();
+        PromptType prompt = new PromptType();
+        HtmlGenerator html = new HtmlGenerator();
+
+        erreur.ErreurFilePath(PATH_ENV, ".env");
+
         DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] { PATH_ENV }));
         string openAIApiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
         string newsAPIApiKey = Environment.GetEnvironmentVariable("NEWSAPI_API_KEY");
 
-        UserInterfaces affichage = new UserInterfaces();
+        erreur.ErreurCleAPI(openAIApiKey, "OpenAI");
+        erreur.ErreurCleAPI(newsAPIApiKey, "NewsAPI");
+        
         OpenAIService openAI = new OpenAIService(openAIApiKey);
-        PromptType prompt = new PromptType();
         NewsAPIService newsAPI = new NewsAPIService(newsAPIApiKey);
-        HtmlGenerator html = new HtmlGenerator();
 
         var Correction = prompt.Prompt()[PromptType.Type.Correction];
         var TraductionUS = prompt.Prompt()[PromptType.Type.TraductionUS];
@@ -64,8 +71,7 @@ class Program
                 string choixTheme = Console.ReadLine();
 
                 affichage.Creation(theme[choixTheme]);
-                await html.Generate(theme[choixTheme], newsAPI);
-                Console.WriteLine("Fichier créer avec succès");
+                await html.Generate(theme[choixTheme], newsAPI, erreur);
 
                 affichage.Suite();
             }
@@ -74,6 +80,12 @@ class Program
             {
                 affichage.Fin();
                 running = false;
+            }
+
+            else
+            {
+                erreur.ErreurChoix();
+                affichage.Suite();
             }
         }
     }

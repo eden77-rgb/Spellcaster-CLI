@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 
 class HtmlGenerator
 {
-    public async Task Generate(string fileName, NewsAPIService newsAPI)
+    public async Task Generate(string fileName, NewsAPIService newsAPI, UserInterfacesErreur erreur)
     {
         string html = $@"
         <!DOCTYPE html>
@@ -33,13 +33,19 @@ class HtmlGenerator
                 </div>
             ";
         }
-        
+
         html += @"
             </div>
         </body>
         </html>
         ";
 
-        File.WriteAllText($"output/{fileName}.html", html);
+        erreur.ErreurDirectoryPath("output");
+        if (erreur.ErreurFileExists($"output/{fileName}.html"))
+        {
+            File.WriteAllText($"output/{fileName}.html", html);
+            Console.WriteLine("Fichier créer avec succès");
+        }
+        
     }
 }
