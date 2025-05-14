@@ -7,13 +7,13 @@ class Program
     private const string PATH_ENV = ".env";
     private static Dictionary<string, string> theme = new Dictionary<string, string>
     {
-        { "1", "business" },
-        { "2", "entertainment" },
-        { "3", "general" },
-        { "4", "health" },
-        { "5", "science" },
-        { "6", "sports" },
-        { "7", "technology" },
+        { "-eco", "business" },
+        { "-div", "entertainment" },
+        { "-gen", "general" },
+        { "-heal", "health" },
+        { "-scie", "science" },
+        { "-sport", "sports" },
+        { "-tech", "technology" },
     };
 
     [STAThread]
@@ -21,6 +21,7 @@ class Program
     {
         UserInterfaces affichage = new UserInterfaces();
         UserInterfacesErreur erreur = new UserInterfacesErreur();
+        UserIntefacesArgs argument = new UserIntefacesArgs();
         PromptType prompt = new PromptType();
         HtmlGenerator html = new HtmlGenerator();
 
@@ -39,6 +40,13 @@ class Program
         var Correction = prompt.Prompt()[PromptType.Type.Correction];
         var TraductionUS = prompt.Prompt()[PromptType.Type.TraductionUS];
         var TraductionUK = prompt.Prompt()[PromptType.Type.TraductionUK];
+
+        Console.Clear();
+
+        if (args.Length > 0)
+        {
+            await argument.gestionArgs(args, theme, html, affichage, erreur, newsAPI);
+        }
 
         bool running = true;
         while (running)
