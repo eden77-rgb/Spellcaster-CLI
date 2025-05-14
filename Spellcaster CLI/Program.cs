@@ -45,7 +45,7 @@ class Program
 
         if (args.Length > 0)
         {
-            await argument.gestionArgs(args, theme, html, affichage, erreur, newsAPI);
+            await argument.gestionArgs(args, theme, html, affichage, erreur, newsAPI, openAI, Correction, TraductionUS, TraductionUK);
         }
 
         bool running = true;

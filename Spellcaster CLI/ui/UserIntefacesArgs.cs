@@ -1,6 +1,8 @@
+using TextCopy;
+
 class UserIntefacesArgs
 {
-    public async Task gestionArgs(string[] args, Dictionary<string, string> theme, HtmlGenerator html, UserInterfaces affichage, UserInterfacesErreur erreur, NewsAPIService newsAPI)
+    public async Task gestionArgs(string[] args, Dictionary<string, string> theme, HtmlGenerator html, UserInterfaces affichage, UserInterfacesErreur erreur, NewsAPIService newsAPI, OpenAIService openAI, string Correction, string TraductionUS, string TraductionUK)
     {
         if (args.Length == 1)
         {
@@ -26,6 +28,43 @@ class UserIntefacesArgs
                     affichage.Suite();
                 }
             }
+
+            if (args[0] == "-correct")
+            {
+                Console.WriteLine("[AVERTISSEMENT]: Il vous manque un argument pour le texte à corriger");
+                Console.WriteLine("Entrez l'argument manquant");
+                Console.Write("> ");
+                string texte = Console.ReadLine();
+
+                string texteCorriger = openAI.getData(openAI.getPrompt(Correction, texte));
+                Console.WriteLine($"[ASSISTANT]: {texteCorriger}");
+
+                ClipboardService.SetText(texteCorriger);
+                Console.WriteLine("[INFO]: Le texte corrigé a été copié avec succès");
+
+                affichage.Suite();
+            }
+
+            if (args[0] == "-trad")
+            {
+                Console.WriteLine("[AVERTISSEMENT]: Il vous manque un argument pour la langue de traduction");
+                Console.WriteLine("Entrez l'argument manquant");
+                Console.Write("> ");
+                string choixUsUk = Console.ReadLine();
+
+                Console.WriteLine("[AVERTISSEMENT]: Il vous manque un argument pour le texte à traduire");
+                Console.WriteLine("Entrez l'argument manquant");
+                Console.Write("> ");
+                string texte = Console.ReadLine();
+
+                string texteTraduit = openAI.getData(openAI.getPrompt((choixUsUk == "-us" ? TraductionUS : TraductionUK), texte));
+                Console.WriteLine($"[ASSISTANT]: {texteTraduit}");
+
+                ClipboardService.SetText(texteTraduit);
+                Console.WriteLine("[INFO]: Le texte traduit a été copié avec succès");
+
+                affichage.Suite();
+            }
         }
 
         else if (args.Length == 2)
@@ -47,6 +86,36 @@ class UserIntefacesArgs
                     affichage.Suite();
                 }
             }
+
+            if (args[0] == "-correct")
+            {
+                string texteCorriger = openAI.getData(openAI.getPrompt(Correction, args[1]));
+                Console.WriteLine($"[ASSISTANT]: {texteCorriger}");
+
+                ClipboardService.SetText(texteCorriger);
+                Console.WriteLine("[INFO]: Le texte corrigé a été copié avec succès");
+
+                affichage.Suite();
+            }
+
+            if (args[0] == "-trad")
+            {
+                if (args[1] == "-us" || args[1] == "-uk")
+                {
+                    Console.WriteLine("[AVERTISSEMENT]: Il vous manque un argument pour le texte à traduire");
+                    Console.WriteLine("Entrez l'argument manquant");
+                    Console.Write("> ");
+                    string texte = Console.ReadLine();
+
+                    string texteTraduit = openAI.getData(openAI.getPrompt((args[1] == "-us" ? TraductionUS : TraductionUK), texte));
+                    Console.WriteLine($"[ASSISTANT]: {texteTraduit}");
+
+                    ClipboardService.SetText(texteTraduit);
+                    Console.WriteLine("[INFO]: Le texte traduit a été copié avec succès");
+                }
+
+                affichage.Suite();
+            }
         }
 
         else if (args.Length == 3)
@@ -64,6 +133,20 @@ class UserIntefacesArgs
 
                     affichage.Suite();
                 }
+            }
+
+            if (args[0] == "-trad")
+            {
+                if (args[1] == "-us" || args[1] == "-uk")
+                {
+                    string texteTraduit = openAI.getData(openAI.getPrompt((args[1] == "-us" ? TraductionUS : TraductionUK), args[2]));
+                    Console.WriteLine($"[ASSISTANT]: {texteTraduit}");
+
+                    ClipboardService.SetText(texteTraduit);
+                    Console.WriteLine("[INFO]: Le texte traduit a été copié avec succès");
+                }
+
+                affichage.Suite();
             }
         }
     }
