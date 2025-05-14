@@ -143,6 +143,19 @@
         "build": {
           "buildTransitive/netcoreapp3.1/System.Text.Json.targets": {}
         }
+      },
+      "TextCopy/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/TextCopy.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/TextCopy.dll": {
+            "related": ".xml"
+          }
+        }
       }
     }
   },
@@ -351,11 +364,38 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "TextCopy/6.0.0": {
+      "sha512": "ShFiWpJaIfFsWYZtSZkN2BV8VLZAYYbsZSqsBxin9nqId/Gk8ap0jN4g82lNa0jcwdltYz1X4Mw4Y03Y3+E3Jw==",
+      "type": "package",
+      "path": "textcopy/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/monoandroid90/TextCopy.dll",
+        "lib/monoandroid90/TextCopy.xml",
+        "lib/net461/TextCopy.dll",
+        "lib/net461/TextCopy.xml",
+        "lib/net5.0/TextCopy.dll",
+        "lib/net5.0/TextCopy.xml",
+        "lib/net6.0/TextCopy.dll",
+        "lib/net6.0/TextCopy.xml",
+        "lib/netstandard2.0/TextCopy.dll",
+        "lib/netstandard2.0/TextCopy.xml",
+        "lib/netstandard2.1/TextCopy.dll",
+        "lib/netstandard2.1/TextCopy.xml",
+        "lib/xamarinios10/TextCopy.dll",
+        "lib/xamarinios10/TextCopy.xml",
+        "textcopy.6.0.0.nupkg.sha512",
+        "textcopy.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "OpenAI >= 2.1.0",
+      "TextCopy >= 5.1.0",
       "dotenv.net >= 3.2.1"
     ]
   },
@@ -413,6 +453,10 @@
             "target": "Package",
             "version": "[2.1.0, )"
           },
+          "TextCopy": {
+            "target": "Package",
+            "version": "[5.1.0, )"
+          },
           "dotenv.net": {
             "target": "Package",
             "version": "[3.2.1, )"
@@ -437,5 +481,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Spellcaster CLI dépend de TextCopy (>= 5.1.0) mais TextCopy 5.1.0 est introuvable. TextCopy 6.0.0 a été résolu à la place.",
+      "libraryId": "TextCopy",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

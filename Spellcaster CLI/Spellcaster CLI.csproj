@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <Folder Include="services\" />
+    <PackageReference Include="TextCopy" Version="5.1.0" />
   </ItemGroup>
 
   <ItemGroup>

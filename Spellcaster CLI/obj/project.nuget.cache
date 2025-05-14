@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vw1eOhoAr40=",
+  "dgSpecHash": "knjt8Ahvnww=",
   "success": true,
   "projectFilePath": "C:\\Users\\edenv\\source\\repos\\SpellcasterCLI\\Spellcaster CLI\\Spellcaster CLI.csproj",
   "expectedPackageFiles": [
@@ -11,7 +11,19 @@
     "C:\\Users\\edenv\\.nuget\\packages\\system.memory.data\\6.0.0\\system.memory.data.6.0.0.nupkg.sha512",
     "C:\\Users\\edenv\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\edenv\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
-    "C:\\Users\\edenv\\.nuget\\packages\\system.text.json\\6.0.10\\system.text.json.6.0.10.nupkg.sha512"
+    "C:\\Users\\edenv\\.nuget\\packages\\system.text.json\\6.0.10\\system.text.json.6.0.10.nupkg.sha512",
+    "C:\\Users\\edenv\\.nuget\\packages\\textcopy\\6.0.0\\textcopy.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Spellcaster CLI dépend de TextCopy (>= 5.1.0) mais TextCopy 5.1.0 est introuvable. TextCopy 6.0.0 a été résolu à la place.",
+      "libraryId": "TextCopy",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

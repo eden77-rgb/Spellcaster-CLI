@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using dotenv.net;
+using TextCopy;
 
 class Program 
 {
@@ -15,6 +16,7 @@ class Program
         { "7", "technology" },
     };
 
+    [STAThread]
     public static async Task Main(string[] args)
     {
         UserInterfaces affichage = new UserInterfaces();
@@ -30,7 +32,7 @@ class Program
 
         erreur.ErreurCleAPI(openAIApiKey, "OpenAI");
         erreur.ErreurCleAPI(newsAPIApiKey, "NewsAPI");
-        
+
         OpenAIService openAI = new OpenAIService(openAIApiKey);
         NewsAPIService newsAPI = new NewsAPIService(newsAPIApiKey);
 
@@ -49,7 +51,12 @@ class Program
                 affichage.Correction();
                 string texte = Console.ReadLine();
 
-                Console.WriteLine($"[ASSISTANT]: {openAI.getData(openAI.getPrompt(Correction, texte))}");
+                string texteCorriger = openAI.getData(openAI.getPrompt(Correction, texte));
+                Console.WriteLine($"[ASSISTANT]: {texteCorriger}");
+
+                ClipboardService.SetText(texteCorriger);
+                Console.WriteLine("[INFO]: Le texte corrigé a été copié avec succès");
+
                 affichage.Suite();
             }
 
@@ -61,7 +68,12 @@ class Program
                 affichage.Traduction(choixUsUk);
                 string texte = Console.ReadLine();
 
-                Console.WriteLine($"[ASSISTANT]: {openAI.getData(openAI.getPrompt((choixUsUk == "1" ? TraductionUS : TraductionUK), texte))}");
+                string texteTraduit = openAI.getData(openAI.getPrompt((choixUsUk == "1" ? TraductionUS : TraductionUK), texte));
+                Console.WriteLine($"[ASSISTANT]: {texteTraduit}");
+
+                ClipboardService.SetText(texteTraduit);
+                Console.WriteLine("[INFO]: Le texte traduit a été copié avec succès");
+
                 affichage.Suite();
             }
 
@@ -78,7 +90,7 @@ class Program
 
                 if (choixLancer == "O")
                 {
-                    html.Run(theme[choixTheme]);   
+                    html.Run(theme[choixTheme]);
                 }
 
                 affichage.Suite();
