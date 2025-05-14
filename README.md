@@ -46,7 +46,7 @@ Spellcaster CLI est un outil en ligne de commande qui utilise des fonctionnalit�
    ```
 2. Accédez au répertoire du projet :
    ```bash
-   cd Spellcaster-CLI
+   cd Spellcaster-CLI/Spellcaster CLI
    ```
 3. Configurez vos clés API dans votre environnement :
    - Créez un fichier `.env` au format du fichier `.env.example` à la racine du projet.
